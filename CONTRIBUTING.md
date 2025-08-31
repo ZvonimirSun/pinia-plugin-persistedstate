@@ -88,8 +88,6 @@ git commit -m '<type>: <description>'
 
 ### The pull request
 
-If it is your first time or you need help creating a PR, you can [read the GitHub guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
-
 When submitting a pull request, make sure your PR's title also follows the [commit convention](#commit-convention).
 
 If your PR fixes or resolves an existing issue, please link it in your PR description (replace `123` with a real issue number):
@@ -98,7 +96,7 @@ If your PR fixes or resolves an existing issue, please link it in your PR descri
 fixes #123
 ```
 
-Commits in the PR don't matter as they are [squashed and merged](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-pull-request-commits) into a single commit.
+Commits in the PR don't matter as they are squashed and merged into a single commit.
 
 ---
 

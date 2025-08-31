@@ -4,15 +4,15 @@
   "version": "4.5.0",
   "packageManager": "pnpm@10.14.0",
   "description": "Configurable persistence and rehydration of Pinia stores.",
-  "author": "Sacha Bouillez <hi@praz.dev> (https://praz.dev)",
+  "author": "praz <dev@praz.me> (https://praz.me)",
   "license": "MIT",
-  "homepage": "https://prazdevs.github.io/pinia-plugin-persistedstate",
+  "homepage": "https://praz.codeberg.page/pinia-plugin-persistedstate/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prazdevs/pinia-plugin-persistedstate.git"
+    "url": "git+https://codeberg.org/praz/pinia-plugin-persistedstate.git"
   },
   "bugs": {
-    "url": "https://github.com/prazdevs/pinia-plugin-persistedstate/issues"
+    "url": "https://codeberg.org/praz/pinia-plugin-persistedstate/issues"
   },
   "keywords": [
     "vue",
@@ -46,9 +46,6 @@
   "files": [
     "dist"
   ],
-  "sponsor": {
-    "url": "https://github.com/sponsors/prazdevs"
-  },
   "scripts": {
     "build": "pnpm build:plugin && pnpm build:umd && pnpm build:module",
     "build:plugin": "tsup src/index.ts --dts --format esm,cjs",

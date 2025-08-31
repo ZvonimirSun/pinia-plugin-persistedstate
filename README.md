@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> This project has a new home at [`codeberg.org/praz/pinia-plugin-persistedstate`](https://codeberg.org/praz/pinia-plugin-persistedstate/).   
+> Everything (issues included) has been migrated and development/maintenance will continue over there.   
+
 # pinia-plugin-persistedstate
 
 [![npm version][version-src]][version-href]
