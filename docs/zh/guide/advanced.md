@@ -7,8 +7,8 @@
 安装插件时，您可以使用公开的 `createPersistedState` 方法来初始化带有全局选项的插件，而不是使用默认导出。这些选项成为应用程序中所有商店的新默认选项。
 
 ```ts twoslash
-import { createPinia } from 'pinia'
 import { createPersistedState } from '@zvonimirsun/pinia-plugin-persistedstate'
+import { createPinia } from 'pinia'
 
 const pinia = createPinia()
 
@@ -35,8 +35,8 @@ pinia.use(createPersistedState({
 除了其他全局持久性选项之外，`createPersistedState` 函数还接受一个选项: `key`。全局 `key` 选项接受传递给存储键的函数，并且应该返回一个字符串，以成为新的存储key。
 
 ```ts twoslash
-import { createPinia } from 'pinia'
 import { createPersistedState } from '@zvonimirsun/pinia-plugin-persistedstate'
+import { createPinia } from 'pinia'
 
 const pinia = createPinia()
 

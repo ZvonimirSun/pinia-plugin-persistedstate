@@ -54,7 +54,7 @@ To get around this you can:
 
 - Use the [`afterHydrate`](/guide/config#afterhydrate) hook to recreate the objects after rehydration.
 - Use a custom [`serializer`](/guide/config#serializer) that supports the data types you want to persist.
-  :::
+:::
 
 ## Only returned `ref()`s are persisted with setup stores
 

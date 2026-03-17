@@ -25,8 +25,8 @@
 2. Add the plugin to pinia:
 
 ```ts
-import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from '@zvonimirsun/pinia-plugin-persistedstate'
+import { createPinia } from 'pinia'
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)

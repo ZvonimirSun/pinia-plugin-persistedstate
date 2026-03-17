@@ -36,8 +36,8 @@ yarn add @zvonimirsun/pinia-plugin-persistedstate
 2. Add the plugin to your pinia instance:
 
 ```ts
-import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from '@zvonimirsun/pinia-plugin-persistedstate'
+import { createPinia } from 'pinia'
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)

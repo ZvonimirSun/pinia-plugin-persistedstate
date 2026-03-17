@@ -7,8 +7,8 @@ The plugin also exposes additional APIs for more advanced use cases.
 Instead of using the default export when installing the plugin, you can use the exposed `createPersistedState` method to initialize the plugin with global options. These options become the new default options for all stores within the app.
 
 ```ts twoslash
-import { createPinia } from 'pinia'
 import { createPersistedState } from '@zvonimirsun/pinia-plugin-persistedstate'
+import { createPinia } from 'pinia'
 
 const pinia = createPinia()
 
@@ -35,8 +35,8 @@ Any option passed to a store's `persist` configuration will override its counter
 On top of other global persistence options, the `createPersistedState` factory function accepts one more option: `key`. The global `key` option accepts a function that gets passed the store key and should return a string to become the new store key.
 
 ```ts twoslash
-import { createPinia } from 'pinia'
 import { createPersistedState } from '@zvonimirsun/pinia-plugin-persistedstate'
+import { createPinia } from 'pinia'
 
 const pinia = createPinia()
 
