@@ -49,6 +49,16 @@ export function createPersistedState(options: PluginOptions = {}) {
   }
 }
 
+export async function createPersistedStateAsync(options: PluginOptions = {}) {
+  const resolvePromises = []
+  if (options.storage && options.storage.resolve) {
+    resolvePromises.push(options.storage.resolve())
+  }
+  await Promise.all(resolvePromises)
+
+  return createPersistedState(options)
+}
+
 /**
  * Pinia plugin to persist stores.
  * @see https://prazdevs.github.io/pinia-plugin-persistedstate/

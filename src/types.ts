@@ -15,6 +15,12 @@ export interface StorageLike {
    * Set a key with a value, or update it if it exists.
    */
   setItem: (key: string, value: string) => void
+
+  /**
+   * Optional pre-processing hook for async storages.
+   * Must be called before persistence setup to keep hydration synchronous.
+   */
+  resolve?: () => Promise<void>
 }
 
 /**
@@ -81,10 +87,10 @@ export interface Persistence<State extends StateTree = StateTree> {
 }
 
 export type PersistenceOptions<State extends StateTree = StateTree>
- = Partial<Persistence<State>>
+  = Partial<Persistence<State>>
 
 export type Persist<State extends StateTree = StateTree>
- = boolean | PersistenceOptions<State> | PersistenceOptions<State>[]
+  = boolean | PersistenceOptions<State> | PersistenceOptions<State>[]
 
 declare module 'pinia' {
   // eslint-disable-next-line unused-imports/no-unused-vars
@@ -99,13 +105,13 @@ declare module 'pinia' {
   export interface PiniaCustomProperties {
     /**
      * Hydrate store from configured storage
-     * Warning: this is for advances usecases, make sure you know what you're doing
+     * Warning: this is for advances usecases, make sure you know what you're doing. this method only supports synchronous storages.
      */
     $hydrate: (opts?: { runHooks?: boolean }) => void
 
     /**
      * Persist store into configured storage
-     * Warning: this is for advances usecases, make sure you know what you're doing
+     * Warning: this is for advances usecases, make sure you know what you're doing. this method only supports synchronous storages.
      */
     $persist: () => void
   }

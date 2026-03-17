@@ -82,7 +82,8 @@
   "dependencies": {
     "deep-pick-omit": "^1.2.1",
     "defu": "^6.1.4",
-    "destr": "^2.0.5"
+    "destr": "^2.0.5",
+    "idb-keyval": "^6.2.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^7.7.2",

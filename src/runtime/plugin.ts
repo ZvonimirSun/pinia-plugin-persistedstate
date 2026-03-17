@@ -4,6 +4,8 @@ import { destr } from 'destr'
 import { createPersistence } from './core'
 import { storages } from './storages'
 
+const STORE_ID_REGEX = /%id/g
+
 function piniaPlugin(context: PiniaPluginContext) {
   const config = useRuntimeConfig()
   const options = config.public.piniaPluginPersistedstate
@@ -12,7 +14,7 @@ function piniaPlugin(context: PiniaPluginContext) {
     context,
     p => ({
       key: options.key
-        ? options.key.replace(/%id/g, p.key ?? context.store.$id)
+        ? options.key.replace(STORE_ID_REGEX, p.key ?? context.store.$id)
         : (p.key ?? context.store.$id),
       debug: p.debug ?? options.debug ?? false,
       serializer: p.serializer ?? {
@@ -22,7 +24,9 @@ function piniaPlugin(context: PiniaPluginContext) {
       storage: p.storage ?? (options.storage
         ? options.storage === 'cookies'
           ? storages.cookies(options.cookieOptions)
-          : storages[options.storage]()
+          : options.storage === 'indexedDB'
+            ? storages.indexedDBStorage(options.indexedDBOptions)
+            : storages[options.storage]()
         : storages.cookies()),
       beforeHydrate: p.beforeHydrate,
       afterHydrate: p.afterHydrate,
@@ -35,7 +39,14 @@ function piniaPlugin(context: PiniaPluginContext) {
 
 export default defineNuxtPlugin({
   name: 'pinia-plugin-persistedstate',
-  setup({ $pinia }) {
-    ($pinia as Pinia).use(piniaPlugin)
+  async setup({ $pinia }) {
+    const options = useRuntimeConfig().public.piniaPluginPersistedstate ?? {}
+    const resolvePromises = []
+    if (options.storage === 'indexedDB' || options.indexedDBOptions) {
+      resolvePromises.push(storages.indexedDBStorage(options.indexedDBOptions).resolve!())
+    }
+    await Promise.all(resolvePromises)
+
+    ;($pinia as Pinia).use(piniaPlugin)
   },
 })

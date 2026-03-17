@@ -2,6 +2,10 @@ import type { PiniaPluginContext, StateTree, Store, StoreGeneric } from 'pinia'
 import type { Persistence, PersistenceOptions } from '../types'
 import { deepOmitUnsafe, deepPickUnsafe } from 'deep-pick-omit'
 
+function isAsyncStorage(storage: Persistence['storage']) {
+  return typeof storage.resolve === 'function'
+}
+
 function hydrateStore(
   store: Store,
   {
@@ -96,15 +100,41 @@ export function createPersistence(
       : [persist]
 
   const persistences = persistenceOptions.map(optionsParser)
+  const warnedStores = new Set<string>()
+
+  function warnAsyncStoreMethod(key: string, method: '$hydrate' | '$persist') {
+    const warnedKey = `${method}:${key}`
+    if (warnedStores.has(warnedKey))
+      return
+
+    warnedStores.add(warnedKey)
+    console.warn(
+      `[pinia-plugin-persistedstate] ${method}() was skipped for key "${key}" because this storage is asynchronous.`,
+    )
+  }
 
   store.$hydrate = ({ runHooks = true } = {}) => {
     persistences.forEach((p) => {
+      if (isAsyncStorage(p.storage)) {
+        if (p.debug) {
+          warnAsyncStoreMethod(p.key, '$hydrate')
+        }
+        return
+      }
+
       hydrateStore(store, p, context, runHooks)
     })
   }
 
   store.$persist = () => {
     persistences.forEach((p) => {
+      if (isAsyncStorage(p.storage)) {
+        if (p.debug) {
+          warnAsyncStoreMethod(p.key, '$persist')
+        }
+        return
+      }
+
       persistState(store.$state, p)
     })
   }

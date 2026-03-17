@@ -1,4 +1,4 @@
-import type { CookiesStorageOptions } from './runtime/storages'
+import type { CookiesStorageOptions, IndexedDBOptions } from './runtime/storages'
 import type { PersistenceOptions } from './types'
 import {
   addImports,
@@ -10,11 +10,11 @@ import {
 } from '@nuxt/kit'
 import { defu } from 'defu'
 
-type ModuleOptions = Pick<PersistenceOptions, 'debug'> & {
+export type ModuleOptions = Pick<PersistenceOptions, 'debug'> & {
   /**
    * Default storage for persistence. Only accepts presets.
    */
-  storage?: 'cookies' | 'localStorage' | 'sessionStorage'
+  storage?: 'cookies' | 'localStorage' | 'sessionStorage' | 'indexedDB'
 
   /**
    * Global key template, allow pre/postfixing store keys.
@@ -27,6 +27,11 @@ type ModuleOptions = Pick<PersistenceOptions, 'debug'> & {
    * Ignored for other storages.
    */
   cookieOptions?: Omit<CookiesStorageOptions, 'encode' | 'decode'>
+
+  /**
+   * Options used by the default indexedDB storage preset.
+   */
+  indexedDBOptions?: IndexedDBOptions
 
   /**
    * Automatically persist all stores with global defaults, opt-out individually.
