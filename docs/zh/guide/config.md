@@ -70,7 +70,7 @@ export const useStore = defineStore('store', {
 
 ## storage
 
-- **类型**: [`StorageLike`](https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/src/types.ts#L8)
+- **类型**: [`StorageLike`](https://github.com/zvonimirsun/pinia-plugin-persistedstate/blob/main/src/types.ts#L8)
 - **默认值**: [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 将数据保存到 Storage 中。 必须有 `getItem: (key: string) => string | null` 和 `setItem: (key: string, value: string) => void` 方法。
@@ -98,7 +98,7 @@ export const useStore = defineStore('store', {
 
 ## serializer
 
-- **类型**: [`Serializer`](https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/src/types.ts#L23)
+- **类型**: [`Serializer`](https://github.com/zvonimirsun/pinia-plugin-persistedstate/blob/main/src/types.ts#L23)
 - **默认值**: [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)/[`destr`](https://github.com/unjs/destr)
 
 自定义序列化程序，用于在持久化之前序列化数据，并在解除冻结存储之前反序列化数据。 必须有 `serialize: (value: StateTree) => string` 和 `deserialize: (value: string) => StateTree` 方法。

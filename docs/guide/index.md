@@ -2,7 +2,7 @@
 
 ## Overview
 
-This plugin is compatible with `pinia>=2.0.0`, make sure you have [Pinia installed](https://pinia.vuejs.org/getting-started.html) before proceeding. `pinia-plugin-persistedstate` comes with many features to make persistence of Pinia stores effortless and configurable with:
+This plugin is compatible with `pinia>=2.0.0`, make sure you have [Pinia installed](https://pinia.vuejs.org/getting-started.html) before proceeding. `@zvonimirsun/pinia-plugin-persistedstate` comes with many features to make persistence of Pinia stores effortless and configurable with:
 
 - An API similar to [`vuex-persistedstate`](https://github.com/robinvdvleuten/vuex-persistedstate).
 - Per-store configuration.
@@ -20,15 +20,15 @@ This plugin is compatible with `pinia>=2.0.0`, make sure you have [Pinia install
 ::: code-group
 
 ```sh [pnpm]
-pnpm add pinia-plugin-persistedstate
+pnpm add @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 ```sh [npm]
-npm i pinia-plugin-persistedstate
+npm i @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 ```sh [yarn]
-yarn add pinia-plugin-persistedstate
+yarn add @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 :::
@@ -37,7 +37,7 @@ yarn add pinia-plugin-persistedstate
 
 ```ts
 import { createPinia } from 'pinia'
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import piniaPluginPersistedstate from '@zvonimirsun/pinia-plugin-persistedstate'
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)

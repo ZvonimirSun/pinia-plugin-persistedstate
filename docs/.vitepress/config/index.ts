@@ -1,7 +1,6 @@
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-import { algolia } from './algolia'
 import { en } from './en'
 import { zh } from './zh'
 
@@ -24,7 +23,7 @@ export default defineConfig({
       transformerTwoslash({
         twoslashOptions: {
           compilerOptions: {
-            types: ['pinia-plugin-persistedstate'],
+            types: ['@zvonimirsun/pinia-plugin-persistedstate'],
           },
         },
       }),
@@ -55,14 +54,10 @@ export default defineConfig({
       light: '/logo-light.svg',
       dark: '/logo-dark.svg',
     },
-    search: {
-      provider: 'algolia',
-      options: algolia,
-    },
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/prazdevs/pinia-plugin-persistedstate',
+        link: 'https://github.com/zvonimirsun/pinia-plugin-persistedstate',
       },
     ],
   },

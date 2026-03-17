@@ -6,7 +6,7 @@ export const zh: LocaleSpecificConfig<DefaultTheme.Config> = {
   themeConfig: {
     editLink: {
       text: '建议对此页面进行更改',
-      pattern: 'https://github.com/prazdevs/pinia-plugin-persistedstate/edit/main/docs/:path',
+      pattern: 'https://github.com/zvonimirsun/pinia-plugin-persistedstate/edit/main/docs/:path',
     },
     docFooter: {
       prev: '上一页',
@@ -43,7 +43,7 @@ export const zh: LocaleSpecificConfig<DefaultTheme.Config> = {
           {
             items: [{
               text: '发行说明',
-              link: 'https://github.com/prazdevs/pinia-plugin-persistedstate/releases',
+              link: 'https://github.com/zvonimirsun/pinia-plugin-persistedstate/releases',
             }],
           },
           {
@@ -53,18 +53,6 @@ export const zh: LocaleSpecificConfig<DefaultTheme.Config> = {
                 text: `${version} (Current)`,
                 activeMatch: '/',
                 link: '#',
-              },
-              {
-                text: '3.2.2',
-                link: 'https://github.com/prazdevs/pinia-plugin-persistedstate/tree/v3',
-              },
-              {
-                text: '2.4.0',
-                link: 'https://github.com/prazdevs/pinia-plugin-persistedstate/tree/v2',
-              },
-              {
-                text: '1.6.3',
-                link: 'https://github.com/prazdevs/pinia-plugin-persistedstate/tree/v2',
               },
             ],
           },

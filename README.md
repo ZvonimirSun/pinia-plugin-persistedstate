@@ -1,7 +1,3 @@
-> [!IMPORTANT]
-> This project has a new home at [`codeberg.org/praz/pinia-plugin-persistedstate`](https://codeberg.org/praz/pinia-plugin-persistedstate/).   
-> Everything (issues included) has been migrated and development/maintenance will continue over there.   
-
 # pinia-plugin-persistedstate
 
 [![npm version][version-src]][version-href]
@@ -22,15 +18,15 @@
 ## Quickstart
 
 1. Install with your favorite package manager:
-   - **pnpm** : `pnpm add pinia-plugin-persistedstate`
-   - npm : `npm i pinia-plugin-persistedstate`
-   - yarn : `yarn add pinia-plugin-persistedstate`
+   - **pnpm** : `pnpm add @zvonimirsun/pinia-plugin-persistedstate`
+   - npm : `npm i @zvonimirsun/pinia-plugin-persistedstate`
+   - yarn : `yarn add @zvonimirsun/pinia-plugin-persistedstate`
 
 2. Add the plugin to pinia:
 
 ```ts
 import { createPinia } from 'pinia'
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import piniaPluginPersistedstate from '@zvonimirsun/pinia-plugin-persistedstate'
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
@@ -75,7 +71,7 @@ Nuxt support comes out of the box thanks to the included module. You just need t
 export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt', // required
-    'pinia-plugin-persistedstate/nuxt',
+    '@zvonimirsun/pinia-plugin-persistedstate/nuxt',
   ],
 })
 ```
@@ -88,15 +84,15 @@ There are several limitations that should be considered, more on those [here](ht
 
 ## Contributing
 
-See the [contribution guide](https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/CONTRIBUTING.md).
+See the [contribution guide](https://github.com/zvonimirsun/pinia-plugin-persistedstate/blob/main/CONTRIBUTING.md).
 
 ## License
 
-[MIT](https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/LICENSE) © 2021-present [Sacha Bouillez](https://github.com/prazdevs)
+[MIT](https://github.com/zvonimirsun/pinia-plugin-persistedstate/blob/main/LICENSE) © 2026-present [ZvonimirSun](https://github.com/zvonimirsun)
 
-[version-src]: https://img.shields.io/npm/v/pinia-plugin-persistedstate?style=flat-square&labelColor=313244&color=cba6f7
-[version-href]: https://npmjs.com/package/pinia-plugin-persistedstate
-[bundle-src]: https://img.shields.io/bundlejs/size/pinia-plugin-persistedstate?style=flat-square&labelColor=313244&color=cba6f7
-[bundle-href]: https://bundlejs.com/?q=pinia-plugin-persistedstate
-[license-src]: https://img.shields.io/github/license/prazdevs/pinia-plugin-persistedstate?style=flat-square&labelColor=313244&color=cba6f7
-[license-href]: https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/LICENSE
+[version-src]: https://img.shields.io/npm/v/@zvonimirsun/pinia-plugin-persistedstate?style=flat-square&labelColor=313244&color=cba6f7
+[version-href]: https://npmjs.com/package/@zvonimirsun/pinia-plugin-persistedstate
+[bundle-src]: https://img.shields.io/bundlejs/size/@zvonimirsun/pinia-plugin-persistedstate?style=flat-square&labelColor=313244&color=cba6f7
+[bundle-href]: https://bundlejs.com/?q=@zvonimirsun/pinia-plugin-persistedstate
+[license-src]: https://img.shields.io/github/license/zvonimirsun/pinia-plugin-persistedstate?style=flat-square&labelColor=313244&color=cba6f7
+[license-href]: https://github.com/zvonimirsun/pinia-plugin-persistedstate/blob/main/LICENSE

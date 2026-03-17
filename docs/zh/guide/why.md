@@ -19,6 +19,6 @@ defineStore('store', () => {
 
 ## 为什么我需要这个插件？
 
-该插件 `pinia-plugin-persistedstate`旨在通过一致的 API 为每个人和每个项目提供对 Pinia store 的持久化。无论你是习惯使用默认值来保存一个完整的 store，还是需要具有多个 storage 和一个自定义序列化器的细粒度配置，该插件都能帮你搞定，所有这些都在您想要持久化的存储上的同一个`persist`选项中。
+该插件 `@zvonimirsun/pinia-plugin-persistedstate`旨在通过一致的 API 为每个人和每个项目提供对 Pinia store 的持久化。无论你是习惯使用默认值来保存一个完整的 store，还是需要具有多个 storage 和一个自定义序列化器的细粒度配置，该插件都能帮你搞定，所有这些都在您想要持久化的存储上的同一个`persist`选项中。
 
-这个插件是积极维护的，为您带来更好的持久化stores的开发者体验。如果您有任何问题、遇到错误或想要提出新功能，非常欢迎您在 [GitHub 仓库](https://github.com/prazdevs/pinia-plugin-persistedstate) 中 [做出贡献](https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/CONTRIBUTING.md).
+这个插件是积极维护的，为您带来更好的持久化stores的开发者体验。如果您有任何问题、遇到错误或想要提出新功能，非常欢迎您在 [GitHub 仓库](https://github.com/zvonimirsun/pinia-plugin-persistedstate) 中 [做出贡献](https://github.com/zvonimirsun/pinia-plugin-persistedstate/blob/main/CONTRIBUTING.md).

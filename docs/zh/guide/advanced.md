@@ -8,7 +8,7 @@
 
 ```ts twoslash
 import { createPinia } from 'pinia'
-import { createPersistedState } from 'pinia-plugin-persistedstate'
+import { createPersistedState } from '@zvonimirsun/pinia-plugin-persistedstate'
 
 const pinia = createPinia()
 
@@ -36,7 +36,7 @@ pinia.use(createPersistedState({
 
 ```ts twoslash
 import { createPinia } from 'pinia'
-import { createPersistedState } from 'pinia-plugin-persistedstate'
+import { createPersistedState } from '@zvonimirsun/pinia-plugin-persistedstate'
 
 const pinia = createPinia()
 

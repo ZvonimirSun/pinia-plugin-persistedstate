@@ -70,7 +70,7 @@ This store will be persisted under the `my-custom-key` key in `localStorage`.
 
 ## storage
 
-- **type**: [`StorageLike`](https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/src/types.ts#L8)
+- **type**: [`StorageLike`](https://github.com/zvonimirsun/pinia-plugin-persistedstate/blob/main/src/types.ts#L8)
 - **default**: [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 Storage to persist the data to. Must have `getItem: (key: string) => string | null` and `setItem: (key: string, value: string) => void` methods.
@@ -98,7 +98,7 @@ This store will be persisted in [`sessionStorage`](https://developer.mozilla.org
 
 ## serializer
 
-- **type**: [`Serializer`](https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/src/types.ts#L23)
+- **type**: [`Serializer`](https://github.com/zvonimirsun/pinia-plugin-persistedstate/blob/main/src/types.ts#L23)
 - **default**: [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)/[`destr`](https://github.com/unjs/destr)
 
 Custom serializer to serialize data before persisted and deserialize data before rehydrating the store. Must have `serialize: (value: StateTree) => string` and `deserialize: (value: string) => StateTree` methods.

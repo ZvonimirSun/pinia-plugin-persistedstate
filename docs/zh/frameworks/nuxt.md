@@ -1,6 +1,6 @@
 # 在 Nuxt 中使用
 
-该软件包 `pinia-plugin-persistedstate` 附带一个 Nuxt 模块，可提供开箱即用的 SSR 友好体验。
+该软件包 `@zvonimirsun/pinia-plugin-persistedstate` 附带一个 Nuxt 模块，可提供开箱即用的 SSR 友好体验。
 
 ## 安装
 
@@ -9,15 +9,15 @@
 ::: code-group
 
 ```sh [pnpm]
-pnpm add pinia-plugin-persistedstate
+pnpm add @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 ```sh [npm]
-npm i pinia-plugin-persistedstate
+npm i @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 ```sh [yarn]
-yarn add pinia-plugin-persistedstate
+yarn add @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 :::
@@ -28,7 +28,7 @@ yarn add pinia-plugin-persistedstate
 export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
-    'pinia-plugin-persistedstate/nuxt',
+    '@zvonimirsun/pinia-plugin-persistedstate/nuxt',
   ],
 })
 ```
@@ -161,7 +161,7 @@ export const useStore = defineStore('main', {
 
 - [`cookieOptions`](#cookies)
 - `debug`
-- [`key`](#global-key)
+- [`key`](#全局密钥)
 - `storage`
 
 > [!NOTE]
@@ -171,7 +171,7 @@ export const useStore = defineStore('main', {
 export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
-    'pinia-plugin-persistedstate/nuxt'
+    '@zvonimirsun/pinia-plugin-persistedstate/nuxt'
   ],
   piniaPluginPersistedstate: {
     storage: 'cookies',
@@ -191,7 +191,7 @@ export default defineNuxtConfig({
 export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
-    'pinia-plugin-persistedstate/nuxt'
+    '@zvonimirsun/pinia-plugin-persistedstate/nuxt'
   ],
   piniaPluginPersistedstate: {
     key: 'prefix_%id_postfix',

@@ -12,7 +12,7 @@ hero:
       link: /zh/guide/
     - theme: alt
       text: 在GitHub上查看
-      link: https://github.com/prazdevs/pinia-plugin-persistedstate
+      link: https://github.com/zvonimirsun/pinia-plugin-persistedstate
   image:
     light: /logo-light.svg
     dark: /logo-dark.svg

@@ -8,7 +8,7 @@ Instead of using the default export when installing the plugin, you can use the 
 
 ```ts twoslash
 import { createPinia } from 'pinia'
-import { createPersistedState } from 'pinia-plugin-persistedstate'
+import { createPersistedState } from '@zvonimirsun/pinia-plugin-persistedstate'
 
 const pinia = createPinia()
 
@@ -36,7 +36,7 @@ On top of other global persistence options, the `createPersistedState` factory f
 
 ```ts twoslash
 import { createPinia } from 'pinia'
-import { createPersistedState } from 'pinia-plugin-persistedstate'
+import { createPersistedState } from '@zvonimirsun/pinia-plugin-persistedstate'
 
 const pinia = createPinia()
 

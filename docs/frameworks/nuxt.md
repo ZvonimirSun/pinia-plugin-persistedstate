@@ -1,6 +1,6 @@
 # Usage with Nuxt
 
-The `pinia-plugin-persistedstate` package comes with a Nuxt module to offer an SSR-friendly experience out of the box.
+The `@zvonimirsun/pinia-plugin-persistedstate` package comes with a Nuxt module to offer an SSR-friendly experience out of the box.
 
 ## Installation
 
@@ -9,15 +9,15 @@ The `pinia-plugin-persistedstate` package comes with a Nuxt module to offer an S
 ::: code-group
 
 ```sh [pnpm]
-pnpm add pinia-plugin-persistedstate
+pnpm add @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 ```sh [npm]
-npm i pinia-plugin-persistedstate
+npm i @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 ```sh [yarn]
-yarn add pinia-plugin-persistedstate
+yarn add @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 :::
@@ -28,7 +28,7 @@ yarn add pinia-plugin-persistedstate
 export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
-    'pinia-plugin-persistedstate/nuxt',
+    '@zvonimirsun/pinia-plugin-persistedstate/nuxt',
   ],
 })
 ```
@@ -173,7 +173,7 @@ The module accepts some options defined in `nuxt.config.ts` under the `piniaPlug
 export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
-    'pinia-plugin-persistedstate/nuxt'
+    '@zvonimirsun/pinia-plugin-persistedstate/nuxt'
   ],
   piniaPluginPersistedstate: {
     storage: 'cookies',
@@ -193,7 +193,7 @@ You can provide a template string to prefix/postfix keys used globally. The prov
 export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
-    'pinia-plugin-persistedstate/nuxt'
+    '@zvonimirsun/pinia-plugin-persistedstate/nuxt'
   ],
   piniaPluginPersistedstate: {
     key: 'prefix_%id_postfix',
@@ -208,7 +208,7 @@ Any store with `my-store` as persistence key (user-provided or infered from stor
 ### Usage in middleware and SSR with `cookies`
 
 While accessing a store within middleware is okay at any time, persisting/hydrating data from `cookies` can fail and throw a `[nuxt] A composable that requires access to the Nuxt instance was called outside of a plugin, Nuxt hook, Nuxt middleware, or Vue setup function.` error.
-This is due to Pinia stores being available and instantiating before Nuxt instance, while `pinia-plugin-persistedstate` needs a Nuxt instance to access `useCookie`.
+This is due to Pinia stores being available and instantiating before Nuxt instance, while `@zvonimirsun/pinia-plugin-persistedstate` needs a Nuxt instance to access `useCookie`.
 
 :::tip Workaround
 To work around this limitation you can:

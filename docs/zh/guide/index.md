@@ -2,7 +2,7 @@
 
 ## 概述
 
-此插件与 `pinia>=2.0.0` 兼容， 请确保在继续之前 [已安装 Pinia](https://pinia.vuejs.org/getting-started.html) 。 `pinia-plugin-persistedstate` 具有许多功能，使 Pinia store 的持久化变得轻松且可配置：
+此插件与 `pinia>=2.0.0` 兼容， 请确保在继续之前 [已安装 Pinia](https://pinia.vuejs.org/getting-started.html) 。 `@zvonimirsun/pinia-plugin-persistedstate` 具有许多功能，使 Pinia store 的持久化变得轻松且可配置：
 
 - 一个类似于 [`vuex-persistedstate`](https://github.com/robinvdvleuten/vuex-persistedstate)的 API。
 - Per-store 配置.
@@ -20,15 +20,15 @@
 ::: code-group
 
 ```sh [pnpm]
-pnpm add pinia-plugin-persistedstate
+pnpm add @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 ```sh [npm]
-npm i pinia-plugin-persistedstate
+npm i @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 ```sh [yarn]
-yarn add pinia-plugin-persistedstate
+yarn add @zvonimirsun/pinia-plugin-persistedstate
 ```
 
 :::
@@ -37,7 +37,7 @@ yarn add pinia-plugin-persistedstate
 
 ```ts
 import { createPinia } from 'pinia'
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import piniaPluginPersistedstate from '@zvonimirsun/pinia-plugin-persistedstate'
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
