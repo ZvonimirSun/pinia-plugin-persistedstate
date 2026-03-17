@@ -19,6 +19,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
       - name: Install dependencies
         run: pnpm install
+      - run: pnpm run dev:prepare
       - run: pnpm run build
       - run: pnpm publish
         env:
