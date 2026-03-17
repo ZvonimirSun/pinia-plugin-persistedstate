@@ -1,7 +1,7 @@
 # Inspired by https://github.com/antfu/.github
 contact_links:
   - name: 🙌 Contribution Guide
-    url: https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/CONTRIBUTING.md
+    url: https://github.com/zvonimirsun/pinia-plugin-persistedstate/blob/main/CONTRIBUTING.md
     about: Please read through before making contributions.
   - name: ⁉️ Why and How to make a reproduction?
     url: https://antfu.me/posts/why-reproductions-are-required
