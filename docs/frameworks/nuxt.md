@@ -157,17 +157,44 @@ export const useStore = defineStore('main', {
 
 > [!WARNING] > `sessionStorage` is client side only.
 
+### `indexedDB`
+
+```ts{10}
+import { defineStore } from 'pinia'
+
+export const useStore = defineStore('main', {
+  state: () => {
+    return {
+      someState: 'hello pinia',
+    }
+  },
+  persist: {
+    storage: piniaPluginPersistedstate.indexedDBStorage(),
+  },
+})
+```
+
+> [!WARNING]
+> `indexedDB` is client side only.
+
+`indexedDBStorage()` optionally accepts:
+
+- `name`: database name
+- `storeName`: object store name
+- `safeStores`: extra database/store pairs to preload during plugin setup
+
 ## Global options
 
 The module accepts some options defined in `nuxt.config.ts` under the `piniaPluginPersistedstate` key:
 
 - [`cookieOptions`](#cookies) (except `decode` and `encode` as functions are not supported)
+- [`indexedDBOptions`](#indexedDB)
 - `debug`
 - [`key`](#global-key)
 - `storage`
 
 > [!NOTE]
-> The global storage option only accepts string values of pre-configured storages (`'cookies'`, `'localStorage'`, `'sessionStorage'`). This is due Nuxt's way of [passing module options to runtime](https://nuxt.com/docs/guide/going-further/modules#exposing-options-to-runtime).
+> The global storage option only accepts string values of pre-configured storages (`'cookies'`, `'localStorage'`, `'sessionStorage'`, `'indexedDB'`). This is due Nuxt's way of [passing module options to runtime](https://nuxt.com/docs/guide/going-further/modules#exposing-options-to-runtime).
 
 ```ts{6-12} [nuxt.config.ts]
 export default defineNuxtConfig({

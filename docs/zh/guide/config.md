@@ -94,7 +94,7 @@ export const useStore = defineStore('store', {
 :::
 
 > [!WARNING] 警告
-> 存储必须是同步的。更多信息请见 [限制页面](/guide/limitations.html#storage-must-be-synchronous)。
+> Hydration 读取必须保持同步。若使用异步存储，请使用带有 `resolve()` 的 storage，并通过 `createPersistedStateAsync` 初始化插件（Nuxt 模块会自动处理）。
 
 ## serializer
 

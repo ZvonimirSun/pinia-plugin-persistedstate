@@ -155,17 +155,44 @@ export const useStore = defineStore('main', {
 > [!WARNING] 警告
 > `sessionStorage` 仅限客户端。
 
+### `indexedDB`
+
+```ts{10}
+import { defineStore } from 'pinia'
+
+export const useStore = defineStore('main', {
+  state: () => {
+    return {
+      someState: 'hello pinia',
+    }
+  },
+  persist: {
+    storage: piniaPluginPersistedstate.indexedDBStorage(),
+  },
+})
+```
+
+> [!WARNING] 警告
+> `indexedDB` 仅限客户端。
+
+`indexedDBStorage()` 可选配置：
+
+- `name`：数据库名称
+- `storeName`：对象存储名称
+- `safeStores`：插件初始化阶段预加载的附加数据库/对象存储组合
+
 ## 全局选项
 
 该模块接受在 `piniaPluginPersistedstate` key下的 `nuxt.config.ts` 中定义的一些选项:
 
 - [`cookieOptions`](#cookies)
+- [`indexedDBOptions`](#indexedDB)
 - `debug`
 - [`key`](#全局密钥)
 - `storage`
 
 > [!NOTE]
-> 全局存储选项仅接受预配置存储 (`'cookies'`, `'localStorage'`, `'sessionStorage'`)的字符串值。 这是由于 Nuxt 将 [模块选项传递给运行时](https://nuxt.com/docs/guide/going-further/modules#exposing-options-to-runtime)的方式。
+> 全局存储选项仅接受预配置存储 (`'cookies'`, `'localStorage'`, `'sessionStorage'`, `'indexedDB'`)的字符串值。 这是由于 Nuxt 将 [模块选项传递给运行时](https://nuxt.com/docs/guide/going-further/modules#exposing-options-to-runtime)的方式。
 
 ```ts{6-12} [nuxt.config.ts]
 export default defineNuxtConfig({

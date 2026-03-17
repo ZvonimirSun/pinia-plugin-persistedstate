@@ -94,7 +94,7 @@ This store will be persisted in [`sessionStorage`](https://developer.mozilla.org
 :::
 
 > [!WARNING]
-> Storage must be synchronous. More info in the [limitations page](/guide/limitations.html#storage-must-be-synchronous).
+> Hydration reads must stay synchronous. For async backends, use a storage exposing `resolve()` and initialize the plugin with `createPersistedStateAsync` (Nuxt module handles this automatically).
 
 ## serializer
 
