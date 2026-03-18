@@ -108,7 +108,7 @@ function indexedDBStorage(options?: IndexedDBOptions): StorageLike {
       if (!import.meta.client)
         return
 
-      set(key, value, customStore).catch((_e) => {})
+      set(key, JSON.parse(value), customStore).catch((_e) => {})
     },
     resolve: async () => {
       if (!import.meta.client)
