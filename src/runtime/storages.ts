@@ -3,6 +3,7 @@ import type { UseStore } from 'idb-keyval'
 import type { StorageLike } from '../types'
 import { useCookie, useRuntimeConfig } from '#app'
 import { createStore, getMany, keys, set } from 'idb-keyval'
+import { debounce } from 'perfect-debounce'
 
 export type CookiesStorageOptions = Omit<
   CookieOptions,
@@ -80,6 +81,7 @@ const resolvedData: ResolvedAsyncDataMap = {}
 export interface IndexedDBOptions {
   name?: string
   storeName?: string
+  debounce?: number
   safeStores?: {
     name: string
     storeNames: string[]
@@ -93,6 +95,7 @@ function indexedDBStorage(options?: IndexedDBOptions): StorageLike {
   if (name && storeName) {
     customStore = createStore(name, storeName)
   }
+  const debounceSet = debounce(set, _options.debounce)
 
   return {
     getItem: (key) => {
@@ -108,7 +111,7 @@ function indexedDBStorage(options?: IndexedDBOptions): StorageLike {
       if (!import.meta.client)
         return
 
-      set(key, JSON.parse(value), customStore).catch((_e) => {})
+      debounceSet(key, JSON.parse(value), customStore).catch((_e) => {})
     },
     resolve: async () => {
       if (!import.meta.client)
