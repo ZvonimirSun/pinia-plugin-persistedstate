@@ -3,6 +3,7 @@
 [![npm version][version-src]][version-href]
 [![bundle size][bundle-src]][bundle-href]
 [![license][license-src]][license-href]
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ZvonimirSun/pinia-plugin-persistedstate)
 
 > Configurable persistence and rehydration of Pinia stores.
 
