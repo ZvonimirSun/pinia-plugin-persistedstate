@@ -89,18 +89,13 @@ export interface IndexedDBOptions {
 }
 
 function indexedDBStorage(options?: IndexedDBOptions): StorageLike {
-  const _options = options ?? useRuntimeConfig().public.piniaPluginPersistedstate.indexedDBOptions ?? {}
-  const { name, storeName } = _options
-  let customStore: UseStore | undefined
-  if (name && storeName) {
-    customStore = createStore(name, storeName)
-  }
-  const debounceSet = debounce(set, _options.debounce)
-
   return {
     getItem: (key) => {
       if (!import.meta.client)
         return null
+
+      const _options = options ?? useRuntimeConfig().public.piniaPluginPersistedstate.indexedDBOptions ?? {}
+      const { name, storeName } = _options
       const resolveKey = `${name || 'default'}::${storeName ?? 'default'}`
       if (!resolvedData.indexedDB?.[resolveKey]) {
         return null
@@ -111,11 +106,25 @@ function indexedDBStorage(options?: IndexedDBOptions): StorageLike {
       if (!import.meta.client)
         return
 
+      const _options = options ?? useRuntimeConfig().public.piniaPluginPersistedstate.indexedDBOptions ?? {}
+      const { name, storeName } = _options
+      let customStore: UseStore | undefined
+      if (name && storeName) {
+        customStore = createStore(name, storeName)
+      }
+      const debounceSet = debounce(set, _options.debounce)
       debounceSet(key, JSON.parse(value), customStore).catch((_e) => {})
     },
     resolve: async () => {
       if (!import.meta.client)
         return
+
+      const _options = options ?? useRuntimeConfig().public.piniaPluginPersistedstate.indexedDBOptions ?? {}
+      const { name, storeName } = _options
+      let customStore: UseStore | undefined
+      if (name && storeName) {
+        customStore = createStore(name, storeName)
+      }
       resolvedData.indexedDB = resolvedData.indexedDB ?? {}
 
       const resolveKey = `${name || 'default'}::${storeName ?? 'default'}`
